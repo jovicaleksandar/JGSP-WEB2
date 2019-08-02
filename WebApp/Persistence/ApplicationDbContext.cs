@@ -11,6 +11,11 @@ namespace WebApp.Persistence
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Vehicles> Vehicles { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Pricelist> Pricelists { get; set; }
+        public DbSet<TicketPrice> TicketPrices { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
